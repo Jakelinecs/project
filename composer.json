@@ -1,15 +1,27 @@
 {
-    "name": "generator/project",
-    "description": "paquetes basicos",
-    "type": "yes",
-    "require": {
-        "tymon/jwt-auth": "dev-develop"
-    },
-    "authors": [
-        {
-            "name": "jakeline",
-            "email": "jakeli1997@gmail.com"
-        }
-    ],
-    "minimum-stability": "dev"
+  "name": "generator/project",
+  "description": "paquetes basicos",
+  "type": "yes",
+  "require": {
+    "tymon/jwt-auth": "dev-develop"
+  },
+  "authors": [
+    {
+      "name": "jakeline",
+      "email": "jakeli1997@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "generator\\project\\": "src/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "generator\\project\\ProjectServiceProvider"
+      ]
+    }
+  },
+  "minimum-stability": "dev"
 }
