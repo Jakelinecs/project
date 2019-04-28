@@ -1,0 +1,15 @@
+{
+    "name": "generator/project",
+    "description": "paquetes basicos",
+    "type": "yes",
+    "require": {
+        "tymon/jwt-auth": "dev-develop"
+    },
+    "authors": [
+        {
+            "name": "jakeline",
+            "email": "jakeli1997@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}
