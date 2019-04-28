@@ -17,6 +17,10 @@ class CreatePrivilegioTable extends Migration
             $table->bigIncrements('id');
             $table->timestamps();
         });
+
+        Schema::table('users', function (Blueprint $table) {
+            $table->boolean('status')->default(true);
+        });
     }
 
     /**
