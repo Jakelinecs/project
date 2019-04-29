@@ -21,7 +21,14 @@ class CreatePrivilegioTable extends Migration
         });
 
 
+        Schema::table('privilegio',function (Blueprint $table){
+            $table->primary(['priv_idCu', 'priv_idCargo','priv_idMetodoCu']);
 
+            $table->foreign('priv_idCu')->references('cu_id')->on('cu');
+            $table->foreign('priv_idCargo')->references('car_id')->on('cargo');
+            $table->foreign('priv_idMetodoCu')->references('met_cu_id')->on('metodo_cu');
+
+        });
 
         Schema::table('users', function (Blueprint $table) {
             $table->boolean('status')->default(true);
