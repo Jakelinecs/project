@@ -19,6 +19,7 @@ class CreateCargoTable extends Migration
             $table->string('car_descripcion',300);
             $table->boolean('car_status')->default( true);
         });
+
     }
 
     /**
