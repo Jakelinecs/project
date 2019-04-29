@@ -14,8 +14,10 @@ class CreatePrivilegioTable extends Migration
     public function up()
     {
         Schema::create('privilegio', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->timestamps();
+            $table->integer('priv_idCu');
+            $table->integer('priv_idCargo');
+            $table->integer('priv_idMetodoCu');
+            $table->boolean('cu_status')->default(true);
         });
 
 
