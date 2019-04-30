@@ -26,6 +26,8 @@ Route::group( ['namespace'=>'generator\project\Http\Controllers'],function (){
     Route::get('getModulo','ModuloController@show');
 
 
+    Route::get('registrarCu','CuController@store');
+    Route::get('getCu','CuController@show');
 
 });
 

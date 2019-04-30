@@ -43,11 +43,12 @@ class CuController extends Controller
     public function store(Request $request)
     {
         $cu = Cu::create([
-            'car_nombre' => $request->json()->get('car_nombre'),
-            'car_descripcion' => $request->json()->get('car_descripcion'),
+            'cu_idModulo' => $request->json()->get('cu_idModulo'),
+            'cu_carpeta' => $request->json()->get('cu_carpeta'),
+            'cu_nombre' => $request->json()->get('cu_nombre'),
         ]);
 
-        return response()->json(compact('cargo'),201);
+        return response()->json(compact('cu'),201);
     }
 
     /**
@@ -56,9 +57,11 @@ class CuController extends Controller
      * @param  \App\Cu  $cu
      * @return \Illuminate\Http\Response
      */
-    public function show(Cu $cu)
+    public function show(Request $request)
     {
-        //
+        $cu  = DB::table('cu')->where('cu_id', $request['cu_id'])->first();
+
+        return response()->json(compact('cu'),201);
     }
 
     /**
@@ -67,6 +70,7 @@ class CuController extends Controller
      * @param  \App\Cu  $cu
      * @return \Illuminate\Http\Response
      */
+
     public function edit(Cu $cu)
     {
         //
