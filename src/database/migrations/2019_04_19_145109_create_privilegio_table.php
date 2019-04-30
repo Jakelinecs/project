@@ -14,25 +14,21 @@ class CreatePrivilegioTable extends Migration
     public function up()
     {
         Schema::create('privilegio', function (Blueprint $table) {
-            $table->integer('priv_idCu');
-            $table->integer('priv_idCargo');
-            $table->integer('priv_idMetodoCu');
+            $table->bigInteger('priv_idCu')->unsigned();
+            $table->bigInteger('priv_idCargo')->unsigned();
+            $table->bigInteger('priv_idMetodoCu')->unsigned();
             $table->boolean('cu_status')->default(true);
-        });
-
-
-        Schema::table('privilegio',function (Blueprint $table){
             $table->primary(['priv_idCu', 'priv_idCargo','priv_idMetodoCu']);
-
-            $table->foreign('priv_idCu')->references('cu_id')->on('cu');
-            $table->foreign('priv_idCargo')->references('car_id')->on('cargo');
-            $table->foreign('priv_idMetodoCu')->references('met_cu_id')->on('metodo_cu');
-
+            $table->timestamps();
         });
+
+
 
         Schema::table('users', function (Blueprint $table) {
             $table->boolean('status')->default(true);
         });
+
+
     }
 
     /**

@@ -10,10 +10,23 @@
 
 
 Route::group( ['namespace'=>'generator\project\Http\Controllers'],function (){
+
     Route::post('register', 'UserController@register');
     Route::post('login', 'UserController@login');
     Route::get('profile', 'UserController@getAuthenticatedUser');
     Route::get('getUser','UserController@getUser');
+
+
+    Route::get('registrarCargo','CargoController@store');
+    Route::get('getCargo','CargoController@show');
+
+
+
+    Route::get('registrarModulo','ModuloController@store');
+    Route::get('getModulo','ModuloController@show');
+
+
+
 });
 
 

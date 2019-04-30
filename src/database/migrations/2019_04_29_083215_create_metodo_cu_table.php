@@ -15,16 +15,11 @@ class CreateMetodoCuTable extends Migration
     {
         Schema::create('metodo_cu', function (Blueprint $table) {
             $table->bigIncrements('met_cu_id');
-            $table->integer('met_cu_idCu');
+            $table->bigInteger('met_cu_idCu')->unsigned();
             $table->string('met_cu_detalleM',30);
             $table->timestamps();
         });
 
-        Schema::table('metodo_cu', function (Blueprint $table) {
-            $table->unsignedBigInteger('met_cu_idCu');
-
-            $table->foreign('met_cu_idCu')->references('met_cu_id')->on('cu');
-        });
 
     }
 
